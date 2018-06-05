@@ -1,6 +1,7 @@
 .PHONY: help
 help:
-	@echo "Targets: run, clean"
+	@echo "run             Run all the component programs with a test broker"
+	@echo "clean           Removes build and test outputs"
 
 .PHONY: run
 run:
