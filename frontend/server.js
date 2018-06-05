@@ -116,6 +116,7 @@ app.use(body_parser.json());
 app.post("/api/send-request", function (req, resp) {
     requests.push(req.body.text);
     send_requests();
+    resp.redirect("/");
 });
 
 app.get("/api/data", function (req, resp) {
