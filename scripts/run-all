@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+
+from plano import *
+
+port = str(random_port())
+
+ENV["MESSAGING_SERVICE_PORT"] = port
+
+#ENV["PN_TRACE_FRM"] = "1"
+#ENV["DEBUG"] = "rhea*"
+
+set_message_threshold("debug")
+
+broker = None
+worker_1 = None
+worker_2 = None
+
+try:
+    broker = start_process("qbroker --port {}", port)
+
+    with working_dir("worker"):
+        call_and_print_on_error("make clean build")
+        worker_1 = start_process("make run")
+        worker_2 = start_process("make run")
+
+    with working_dir("frontend"):
+        call_and_print_on_error("make clean build")
+        call("make run")
+except KeyboardInterrupt:
+    pass
+except CalledProcessError:
+    terminate_process(broker)
+    terminate_process(worker_1)
+    terminate_process(worker_2)
