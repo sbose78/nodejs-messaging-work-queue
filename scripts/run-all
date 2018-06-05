@@ -16,7 +16,7 @@ worker_1 = None
 worker_2 = None
 
 try:
-    broker = start_process("qbroker --port {}", port)
+    broker = start_process("scripts/test-broker 127.0.0.1 {}", port)
 
     with working_dir("worker"):
         call_and_print_on_error("make clean build")
