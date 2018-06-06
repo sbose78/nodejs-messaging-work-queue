@@ -29,8 +29,8 @@ oc new-app --template=amq63-basic \
   -p MQ_USERNAME=work-queue \
   -p MQ_PASSWORD=work-queue
 
-oc new-app --template=wfswarm-messaging-work-queue-frontend
-oc new-app --template=wfswarm-messaging-work-queue-worker
+oc new-app --template=nodejs-messaging-work-queue-frontend
+oc new-app --template=nodejs-messaging-work-queue-worker
 ```
 
 <!-- oc new-app --template=amq-broker-71-basic \ -->
