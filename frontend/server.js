@@ -21,6 +21,7 @@
 
 const body_parser = require("body-parser");
 const express = require("express");
+const probe = require("kube-probe");
 const rhea = require("rhea");
 
 const http_host = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0";
@@ -121,6 +122,8 @@ const app = express();
 
 app.use(express.static("static"));
 app.use(body_parser.json());
+
+probe(app)
 
 app.post("/api/send-request", function (req, resp) {
     requests.push(req.body.text);
