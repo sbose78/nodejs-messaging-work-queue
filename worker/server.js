@@ -19,12 +19,19 @@
 
 "use strict";
 
+const express = require("express");
+const probe = require("kube-probe");
 const rhea = require("rhea");
 
 const amqp_host = process.env.MESSAGING_SERVICE_HOST || "localhost";
 const amqp_port = process.env.MESSAGING_SERVICE_PORT || 5672;
 const amqp_user = process.env.MESSAGING_SERVICE_USER || "work-queue";
 const amqp_password = process.env.MESSAGING_SERVICE_PASSWORD || "work-queue";
+
+const http_host = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0";
+const http_port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+// AMQP
 
 const id = Math.floor(Math.random() * (10000 - 1000)) + 1000;
 const container = rhea.create_container({id: "worker-nodejs-" + id});
@@ -100,3 +107,13 @@ const opts = {
 container.connect(opts);
 
 console.log("Connected to AMQP messaging service at %s:%s", amqp_host, amqp_port);
+
+// HTTP
+
+const app = express();
+
+probe(app)
+
+app.listen(http_port, http_host);
+
+console.log("Listening for new HTTP connections at %s:%s", http_host, http_port);
