@@ -109,7 +109,10 @@ objects:
     template:
       spec:
         containers:
-          - readinessProbe:
+          - envFrom:
+              - configMapRef:
+                  name: messaging-service
+            readinessProbe:
               httpGet:
                 path: /api/health/readiness
                 port: 8080
