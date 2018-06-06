@@ -23,6 +23,8 @@ const rhea = require("rhea");
 
 const amqp_host = process.env.MESSAGING_SERVICE_HOST || "localhost";
 const amqp_port = process.env.MESSAGING_SERVICE_PORT || 5672;
+const amqp_user = process.env.MESSAGING_SERVICE_USER || "work-queue";
+const amqp_password = process.env.MESSAGING_SERVICE_PASSWORD || "work-queue";
 
 const id = Math.floor(Math.random() * (10000 - 1000)) + 1000;
 const container = rhea.create_container({id: "worker-nodejs-" + id});
@@ -88,6 +90,13 @@ function send_status_update() {
 
 setInterval(send_status_update, 5 * 1000);
 
-container.connect({host: amqp_host, port: amqp_port});
+const opts = {
+    host: amqp_host,
+    port: amqp_port,
+    username: amqp_user,
+    password: amqp_password,
+};
+
+container.connect(opts);
 
 console.log("Connected to AMQP messaging service at %s:%s", amqp_host, amqp_port);
