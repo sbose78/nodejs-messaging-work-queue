@@ -1,1 +1,0 @@
-# Upstate worker - Node.js
