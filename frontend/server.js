@@ -64,17 +64,17 @@ function send_requests() {
     }
 }
 
-container.on("connection_open", function (event) {
+container.on("connection_open", (event) => {
     request_sender = event.connection.open_sender("work-queue/requests");
     response_receiver = event.connection.open_receiver({source: {dynamic: true}});
     worker_update_receiver = event.connection.open_receiver("work-queue/worker-updates");
 });
 
-container.on("sendable", function (event) {
+container.on("sendable", (event) => {
     send_requests();
 });
 
-container.on("message", function (event) {
+container.on("message", (event) => {
     if (event.receiver === worker_update_receiver) {
         let update = event.message.application_properties;
 

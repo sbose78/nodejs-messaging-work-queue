@@ -57,12 +57,12 @@ function process_request(request) {
     return text;
 }
 
-container.on("connection_open", function (event) {
+container.on("connection_open", (event) =>  {
     event.connection.open_receiver("work-queue/requests");
     worker_update_sender = event.connection.open_sender("work-queue/worker-updates");
 });
 
-container.on("message", function (event) {
+container.on("message", (event) => {
     let request = event.message;
     let response_body;
 
@@ -82,7 +82,7 @@ container.on("message", function (event) {
         application_properties: {
             workerId: container.id
         },
-        body: response_body
+        body: response_body,
     };
 
     event.connection.send(response);
