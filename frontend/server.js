@@ -127,7 +127,7 @@ probe(app)
 
 app.post("/api/send-request", (req, resp) => {
     let message = {
-        message_id: id + "/" + request_sequence++,
+        message_id: `${id}/${request_sequence++}`,
         application_properties: {
             uppercase: req.body.uppercase,
             reverse: req.body.reverse,
