@@ -172,3 +172,18 @@ app.get("/api/data", (req, resp) => {
 app.listen(http_port, http_host);
 
 console.log("%s: Listening for new HTTP connections at %s:%s", id, http_host, http_port);
+
+function pruneStaleWorkers() {
+    for (let workerId of Object.keys(workers)) {
+        let now = new Date().getTime();
+
+        let update = workers[workerId];
+
+        if (now - update.timestamp > 10 * 1000) {
+            delete workers[workerId];
+            console.log("%s: Pruned %s", id, workerId);
+        }
+    }
+}
+
+setInterval(pruneStaleWorkers, 5 * 1000);
