@@ -1,6 +1,6 @@
 {
    "name": "nodejs-messaging-work-queue-frontend",
-   "version": "2.0.0",
+   "version": "1.0.0",
    "description": "A sample Node.js app that sends requests",
    "license": "Apache-2.0",
    "scripts": {
@@ -11,7 +11,7 @@
       "ci": "npm run lint && npm run coveralls",
       "dependencyCheck": "szero . --ci",
       "prepublish": "license-reporter report",
-      "openshift": "nodeshift --strictSSL=false --nodeVersion=10.x",
+      "openshift": "nodeshift --strictSSL=false --nodeVersion=8.x",
       "postinstall": "license-reporter report -s && license-reporter save -s --xml licenses.xml",
       "start": "node ."
    },
