@@ -44,8 +44,6 @@ function processRequest (request) {
   const reverse = request.application_properties.reverse;
   let text = request.body;
 
-  console.log('request text', text);
-
   if (uppercase) {
     text = text.toUpperCase();
   }
@@ -68,12 +66,12 @@ container.on('message', event => {
   const request = event.message;
   let responseBody;
 
-  console.log('%s: Received request %s', id, request);
+  console.log(`${id}: Received request ${request}`);
 
   try {
     responseBody = processRequest(request);
   } catch (e) {
-    console.error('%s: Failed processing message: %s', id, e);
+    console.error(`${id}: Failed processing message: ${e}`);
     processingErrors++;
     return;
   }
@@ -91,7 +89,7 @@ container.on('message', event => {
 
   requestsProcessed++;
 
-  console.log('%s: Sent response %s', id, JSON.stringify(response));
+  console.log(`${id}: Sent response ${JSON.stringify(response)}`);
 });
 
 function sendUpdate () {
