@@ -1,10 +1,10 @@
-# Messaging Work Queue Mission for Node.js
+# Messaging Work Queue Example for Node.js
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift-starters/nodejs-messaging-work-queue.svg)](https://greenkeeper.io/)
 
 ## Purpose
 
-This mission booster demonstrates how to dispatch tasks to a scalable
+This example application demonstrates how to dispatch tasks to a scalable
 set of worker processes using a message queue. It uses the AMQP 1.0
 message protocol to send and receive messages.
 
