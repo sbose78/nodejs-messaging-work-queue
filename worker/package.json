@@ -11,7 +11,7 @@
       "ci": "npm run lint && npm run coveralls",
       "dependencyCheck": "szero . --ci",
       "prepublish": "license-reporter report",
-      "openshift": "nodeshift --strictSSL=false --nodeVersion=8.x",
+      "openshift": "nodeshift --strictSSL=false --imageTag=8.x",
       "postinstall": "license-reporter report -s && license-reporter save -s --xml licenses.xml",
       "start": "node ."
    },
@@ -58,7 +58,7 @@
       "rhea": "^1.0.0"
    },
    "devDependencies": {
-      "nodeshift": "~2.1.1",
+      "nodeshift": "~3.0.0",
       "szero": "~1.0.1",
       "xo": "~0.24.0"
    }
