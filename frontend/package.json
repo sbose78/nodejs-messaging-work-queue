@@ -1,61 +1,61 @@
 {
-   "name": "nodejs-messaging-work-queue-frontend",
-   "version": "2.1.1",
-   "description": "A sample Node.js app that sends requests",
-   "license": "Apache-2.0",
-   "scripts": {
-      "test": "tape test/*.js | tap-spec",
-      "lint": "xo",
-      "coverage": "nyc npm test",
-      "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-      "ci": "npm run lint && npm run coveralls",
-      "prepublish": "license-reporter report",
-      "openshift": "nodeshift --strictSSL=false --imageTag=10.x",
-      "postinstall": "license-reporter report -s && license-reporter save -s --xml licenses.xml",
-      "start": "node ."
-   },
-   "main": "./bin/www",
-   "xo": {
-      "space": 2,
-      "rules": {
-         "space-before-function-paren": [
-            "error",
-            "always"
-         ],
-         "camelcase": [
-            "off"
-         ]
-      },
-      "ignores": [
-         "public/**"
+  "name": "nodejs-messaging-work-queue-frontend",
+  "version": "2.1.1",
+  "description": "A sample Node.js app that sends requests",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "tape test/*.js | tap-spec",
+    "lint": "xo",
+    "coverage": "nyc npm test",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "ci": "npm run lint && npm run coveralls",
+    "prepublish": "license-reporter report",
+    "openshift": "nodeshift --strictSSL=false --imageTag=10.x",
+    "postinstall": "license-reporter report -s && license-reporter save -s --xml licenses.xml",
+    "start": "node ."
+  },
+  "main": "./bin/www",
+  "xo": {
+    "space": 2,
+    "rules": {
+      "space-before-function-paren": [
+        "error",
+        "always"
+      ],
+      "camelcase": [
+        "off"
       ]
-   },
-   "repository": {
-      "type": "git",
-      "url": "https://github.com/nodeshift-starters/nodejs-messaging-work-queue.git"
-   },
-   "files": [
-      "package.json",
-      "app.js",
-      "public",
-      "bin",
-      "LICENSE",
-      "licenses"
-   ],
-   "bugs": {
-      "url": "https://github.com/nodeshift-starters/nodejs-messaging-work-queue/issues"
-   },
-   "homepage": "https://github.com/nodeshift-starters/nodejs-messaging-work-queue",
-   "dependencies": {
-      "body-parser": "~1.19.0",
-      "debug": "^4.0.1",
-      "express": "~4.17.1",
-      "kube-probe": "~0.3.2",
-      "license-reporter": "~1.2.2",
-      "rhea": "^1.0.0"
-   },
-   "devDependencies": {
-      "nodeshift": "~3.1.1",
-      "xo": "~0.24.0"
-   }
+    },
+    "ignores": [
+      "public/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodeshift-starters/nodejs-messaging-work-queue.git"
+  },
+  "files": [
+    "package.json",
+    "app.js",
+    "public",
+    "bin",
+    "LICENSE",
+    "licenses"
+  ],
+  "bugs": {
+    "url": "https://github.com/nodeshift-starters/nodejs-messaging-work-queue/issues"
+  },
+  "homepage": "https://github.com/nodeshift-starters/nodejs-messaging-work-queue",
+  "dependencies": {
+    "body-parser": "~1.19.0",
+    "debug": "^4.0.1",
+    "express": "~4.17.1",
+    "kube-probe": "~0.3.2",
+    "license-reporter": "~1.2.2",
+    "rhea": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodeshift": "~3.1.1",
+    "xo": "~0.24.0"
+  }
 }
