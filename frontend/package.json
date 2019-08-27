@@ -9,7 +9,7 @@
     "coverage": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "ci": "npm run lint && npm run coveralls",
-    "prepublish": "license-reporter report",
+    "prepublish": "license-reporter report -s",
     "openshift": "nodeshift --strictSSL=false --imageTag=10.x",
     "postinstall": "license-reporter report -s && license-reporter save -s --xml licenses.xml",
     "start": "node ."
