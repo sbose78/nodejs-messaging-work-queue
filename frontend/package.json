@@ -55,7 +55,7 @@
     "rhea": "^1.0.0"
   },
   "devDependencies": {
-    "nodeshift": "~4.0.0",
+    "nodeshift": "~4.1.0",
     "xo": "~0.24.0"
   }
 }
