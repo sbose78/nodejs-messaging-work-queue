@@ -1,6 +1,6 @@
 {
   "name": "nodejs-messaging-work-queue-frontend",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A sample Node.js app that sends requests",
   "license": "Apache-2.0",
   "scripts": {
@@ -56,6 +56,6 @@
   },
   "devDependencies": {
     "nodeshift": "~4.1.0",
-    "xo": "~0.24.0"
+    "xo": "~0.25.3"
   }
 }

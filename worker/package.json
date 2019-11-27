@@ -1,6 +1,6 @@
 {
   "name": "nodejs-messaging-work-queue-worker",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A sample Node.js app that processes requests",
   "license": "Apache-2.0",
   "scripts": {
@@ -58,6 +58,6 @@
   },
   "devDependencies": {
     "nodeshift": "~4.1.0",
-    "xo": "~0.24.0"
+    "xo": "~0.25.3"
   }
 }
