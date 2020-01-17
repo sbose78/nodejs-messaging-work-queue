@@ -1,4 +1,4 @@
-# Messaging Work Queue Example for Node.js
+# DEPRECATED - This is no longer supported please consider using 10.x instead
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift-starters/nodejs-messaging-work-queue.svg)](https://greenkeeper.io/)
 
