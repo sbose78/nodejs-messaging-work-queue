@@ -82,6 +82,7 @@ objects:
   metadata:
     labels:
       app: nodejs-messaging-work-queue-worker
+      'app.openshift.io/runtime': 'nodejs'
     name: nodejs-messaging-work-queue-worker
   spec:
     replicas: 1
@@ -143,6 +144,7 @@ objects:
   metadata:
     labels:
       app: nodejs-messaging-work-queue-worker
+      'app.openshift.io/runtime': 'nodejs'
     name: nodejs-messaging-work-queue-worker
   spec:
     ports:

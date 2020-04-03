@@ -82,6 +82,7 @@ objects:
   metadata:
     labels:
       app: nodejs-messaging-work-queue-frontend
+      'app.openshift.io/runtime': 'nodejs'
     name: nodejs-messaging-work-queue-frontend
   spec:
     replicas: 1
@@ -143,6 +144,7 @@ objects:
   metadata:
     labels:
       app: nodejs-messaging-work-queue-frontend
+      'app.openshift.io/runtime': 'nodejs'
     name: nodejs-messaging-work-queue-frontend
   spec:
     ports:
@@ -155,6 +157,7 @@ objects:
   metadata:
     labels:
       app: nodejs-messaging-work-queue-frontend
+      'app.openshift.io/runtime': 'nodejs'
     name: frontend
   spec:
     port:
